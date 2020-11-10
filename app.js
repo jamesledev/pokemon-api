@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //pokemon router
 var pokemonRouter = require('./routes/pokemon');
-
+//init app
 var app = express();
 
 // view engine setup
