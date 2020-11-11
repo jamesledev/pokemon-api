@@ -16,7 +16,7 @@ axios.get(url)
  
     var pokemonObject = {
         name: response.data.name,
-        weight: response.data.weight,
+        weight: response.data.weight / 10,
         height: response.data.height / 10,
         img: response.data.sprites.front_default
     }
