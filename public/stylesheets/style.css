@@ -1,31 +1,37 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  font: 14px Helvetica, sans-serif;
   font-weight: bold;
 }
 
 .container {
   display: flex;
-  height: 400px;
-  width: 500px;
+  height: 700px;
+  width: 700px;
   }
 .mainText {
-  background-color: blue;
-   width: 50%;
+  
+   width: 30%;
    height: 50%;
 }
 .pokemonBox {
-  background-color: orange;
+  
   width: 50%;
   height: 50%;
-  margin-left: auto;
-  margin-right: auto;
+
 
 }
 .pokemonImg {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
   height: auto;
-  width: 100%;
+  width: 60%;
+  
+  margin: auto;
+}
+
+
+.pokeName {
+  text-transform: capitalize;
+  
 
 }
