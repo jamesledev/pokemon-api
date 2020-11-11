@@ -15,6 +15,11 @@ router.get('/:id', function (req, res, next) {
 
     .then(function (response) {
 
+      var type2 = null
+      if(response.data.types[1]){
+        type2 = response.data.types[1].type.name;
+      }  else var type2 = "";
+
       var pokemonObject = {
         id: response.data.id,
         name: response.data.name,
@@ -22,16 +27,14 @@ router.get('/:id', function (req, res, next) {
         height: response.data.height / 10,
         img: response.data.sprites.front_default,
         type1: response.data.types[0].type.name,
-      
+        type2: type2 
+  
       }
-      // if (response.data.types.length == 2) {
-      // type2  response.data.types[1].type.name;
-      // } else {type2 = "";
-    // } 
+
       return pokemonObject
     })
 
-
+    
 
     .catch(function (error) {
 
