@@ -21,10 +21,11 @@ router.get('/:id', function (req, res, next) {
         name: response.data.name,
         weight: response.data.weight / 10,
         height: response.data.height / 10,
-        img: response.data.sprites.front_default,
-        type1: response.data.types[0].type.name,
-        type2: type2,
+        img: response.data.sprites.other['official-artwork'].front_default,
+        type1: response.data.types[0].type.name.toLowerCase(),
+        type2: type2.toLowerCase(),
       };
+      console.log(response.data);
       return pokemonObject;
     })
     // .then to get the url
