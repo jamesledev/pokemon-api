@@ -12,9 +12,15 @@
         <p class="{{type1}} types" id='tp1'>Type 1: {{type1}}</p>
         {{#if type2}} <p class="{{type2}} types" id='tp2'>Type 2: {{type2}}</p> {{/if}}
 
-        <p>Evolutions:
-
-        </p>
+        <div class="types">Evolutions: </br>
+            {{#each evolutions}}
+            <div class="col">
+                <p>{{this.name}}</p>
+                <p>{{this.level}}</p>
+            </div>
+            {{#unless @last}} ---> {{/unless}}
+            {{/each}}
+        </div>
     </div>
 
     <div class="pokemonBox">

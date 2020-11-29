@@ -8,8 +8,11 @@ body {
   height: 700px;
   width: 700px;
 }
+.col {
+  display: inline-block;
+}
 .mainText {
-  width: 30%;
+  width: 50%;
   height: 50%;
 }
 .pokemonBox {
