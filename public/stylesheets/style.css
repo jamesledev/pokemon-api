@@ -1,5 +1,4 @@
 body {
-
   font: 14px Helvetica, sans-serif;
   font-weight: bold;
 }
@@ -8,30 +7,97 @@ body {
   display: flex;
   height: 700px;
   width: 700px;
-  }
+}
 .mainText {
-  
-   width: 30%;
-   height: 50%;
+  width: 30%;
+  height: 50%;
 }
 .pokemonBox {
-  
   width: 50%;
   height: 50%;
-
-
 }
 .pokemonImg {
   display: flex;
   height: auto;
   width: 60%;
-  
+
   margin: auto;
 }
 
+.types {
+  text-transform: capitalize;
+}
+.normal {
+  color: #a8a878;
+}
+
+.electric {
+  color: #f7d02c;
+}
+.poison {
+  color: #a33ea1;
+}
+
+.psychic {
+  color: #f95587;
+}
+
+.grass {
+  color: #7ac74c;
+}
+
+.ground {
+  color: #e2bf65;
+}
+
+.fire {
+  color: #ee8130;
+}
+
+.ice {
+  color: #96d9d6;
+}
+
+.rock {
+  color: #b6a136;
+}
+
+.dragon {
+  color: #6f35fc;
+}
+
+.water {
+  color: #6390f0;
+}
+
+.bug {
+  color: #a6b91a;
+}
+
+.dark {
+  color: #705746;
+}
+
+.fighting {
+  color: #c22e28;
+}
+
+.ghost {
+  color: #735797;
+}
+
+.steel {
+  color: #b7b7ce;
+}
+
+.flying {
+  color: #a98ff3;
+}
+
+.fairy {
+  color: #d685ad;
+}
 
 .pokeName {
   text-transform: capitalize;
-  
-
 }

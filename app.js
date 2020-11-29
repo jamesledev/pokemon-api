@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //pokemon router
-var pokemonRouter = require('./routes/pokemon');
+var pokemonRouter = require('./routes/old_way_pokemon');
 
 var app = express();
 
