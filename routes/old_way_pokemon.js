@@ -3,6 +3,13 @@ var router = express.Router();
 
 const axios = require('axios');
 /* GET home page. */
+
+function getIDFromURL(url) {
+  url = url.split('/');
+  let id = url[url.length - 2];
+  return id;
+}
+
 router.get('/:id', function (req, res, next) {
   const id = req.params.id;
   console.log(id);
@@ -32,42 +39,104 @@ router.get('/:id', function (req, res, next) {
       return axios.get(evoUrl);
     })
     .then(function (response) {
-      pokemonObject.evolutions = [];
-      pokemonObject.evolutions.push({
-        name: response.data.chain.species.name,
+      const evolutionChain = response.data.chain;
+      pokemonObject.evolutions = {
+        firstEvo: [],
+        secondEvo: [],
+        thirdEvo: [],
+      };
+      let firstEvoId = getIDFromURL(evolutionChain.species.url);
+      pokemonObject.evolutions.firstEvo.push({
+        name: evolutionChain.species.name,
         level: '',
+        id: firstEvoId,
       });
-      if (response.data.chain.evolves_to[0]) {
-        for (var i = 0; i < response.data.chain.evolves_to.length; i++) {
-          let evoTwo = response.data.chain.evolves_to[i].species.name;
-          let level =
-            response.data.chain.evolves_to[i].evolution_details[0].min_level;
+      if (evolutionChain.evolves_to[0]) {
+        for (var i = 0; i < evolutionChain.evolves_to.length; i++) {
+          const evolutionTo = evolutionChain.evolves_to[i];
+          const evoTwo = evolutionTo.species.name;
+          const level = evolutionTo.evolution_details[0].min_level;
+          const id = getIDFromURL(evolutionTo.species.url);
+          const evolutionDetails = evolutionTo.evolution_details[0];
+          let {
+            gender,
+            held_item,
+            item,
+            known_move,
+            known_move_type,
+            location,
+            min_affection,
+            min_beauty,
+            min_happiness,
+            min_level,
+            needs_overworld_rain,
+            party_species,
+            party_type,
+            relative_physical_stats,
+            time_of_day,
+            trade_species,
+            trigger,
+            turn_upside_down,
+          } = evolutionDetails;
+
+          item = item ? item.name : item;
           const evolutionTree = {
             name: evoTwo,
-            level: level,
+            level,
+            id,
+            item,
+            min_happiness,
+            time_of_day,
           };
-          pokemonObject.evolutions.push(evolutionTree);
-          console.log(level);
+          pokemonObject.evolutions.secondEvo.push(evolutionTree);
         }
       }
-      if (response.data.chain.evolves_to[0].evolves_to[0]) {
-        for (var i = 0; i < response.data.chain.evolves_to.length; i++) {
-          let evoThree =
-            response.data.chain.evolves_to[0].evolves_to[i].species.name;
-          let level =
-            response.data.chain.evolves_to[0].evolves_to[i].evolution_details[0]
-              .min_level;
+      if (evolutionChain.evolves_to[0].evolves_to[0]) {
+        for (var i = 0; i < evolutionChain.evolves_to.length; i++) {
+          const evolutionTo = evolutionChain.evolves_to[0].evolves_to[i];
+          const evoThree = evolutionTo.species.name;
+          const level = evolutionTo.evolution_details[0].min_level;
+          const id = getIDFromURL(evolutionTo.species.url);
+
+          const evolutionDetails = evolutionTo.evolution_details[0];
+          let {
+            gender,
+            held_item,
+            item,
+            known_move,
+            known_move_type,
+            location,
+            min_affection,
+            min_beauty,
+            min_happiness,
+            min_level,
+            needs_overworld_rain,
+            party_species,
+            party_type,
+            relative_physical_stats,
+            time_of_day,
+            trade_species,
+            trigger,
+            turn_upside_down,
+          } = evolutionDetails;
+
+          item = item ? item.name : item;
+
           const evolutionTree = {
             name: evoThree,
-            level: level,
+            level,
+            id,
+            item,
+            min_happiness,
+            time_of_day,
           };
-          pokemonObject.evolutions.push(evolutionTree);
+          pokemonObject.evolutions.thirdEvo.push(evolutionTree);
         }
       }
 
-      //level
-      //item
-      //condition
+      // //level
+      // //item
+      // //condition
 
       return pokemonObject;
     })
@@ -76,6 +145,7 @@ router.get('/:id', function (req, res, next) {
     })
     .then(function (data) {
       console.log(pokemonObject);
+      console.log(pokemonObject.evolutions.secondEvo);
       res.render('pokemon', pokemonObject);
     });
 });

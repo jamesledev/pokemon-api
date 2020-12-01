@@ -1,106 +1,113 @@
 body {
   font: 14px Helvetica, sans-serif;
-  font-weight: bold;
 }
-
+.title {
+  display: flex;
+  justify-content: center;
+}
 .container {
   display: flex;
-  height: 700px;
-  width: 700px;
+  flex-direction: column;
+  max-width: 700px;
 }
-.col {
-  display: inline-block;
+.firstRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.empty {
+  flex-grow: 3;
+  width: 500px;
 }
 .mainText {
-  width: 50%;
-  height: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  width: 400px;
 }
-.pokemonBox {
-  width: 50%;
-  height: 50%;
+.pokemonInfo {
+  font-size: 12px;
+  order: 2;
 }
 .pokemonImg {
+  width: 90%;
+}
+.evos {
   display: flex;
-  height: auto;
-  width: 60%;
-
-  margin: auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.firstEvoStep,
+.secondEvoStep {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.step {
+  justify-content: center;
+  display: flex;
+  height: 115px;
+  align-items: center;
+  flex-direction: column;
+}
+.evoImg {
 }
 
-.types {
+.capital {
   text-transform: capitalize;
 }
 .normal {
   color: #a8a878;
 }
-
 .electric {
   color: #f7d02c;
 }
 .poison {
   color: #a33ea1;
 }
-
 .psychic {
   color: #f95587;
 }
-
 .grass {
   color: #7ac74c;
 }
-
 .ground {
   color: #e2bf65;
 }
-
 .fire {
   color: #ee8130;
 }
-
 .ice {
   color: #96d9d6;
 }
-
 .rock {
   color: #b6a136;
 }
-
 .dragon {
   color: #6f35fc;
 }
-
 .water {
   color: #6390f0;
 }
-
 .bug {
   color: #a6b91a;
 }
-
 .dark {
   color: #705746;
 }
-
 .fighting {
   color: #c22e28;
 }
-
 .ghost {
   color: #735797;
 }
-
 .steel {
   color: #b7b7ce;
 }
-
 .flying {
   color: #a98ff3;
 }
-
 .fairy {
   color: #d685ad;
-}
-
-.pokeName {
-  text-transform: capitalize;
 }

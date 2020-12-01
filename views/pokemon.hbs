@@ -1,29 +1,94 @@
-<h1>Who's that Pokemon?</h1>
-
 <main class="container">
-    <div class="mainText">
-        <p>National ID: #{{id}}</p>
-        <p class="pokeName">{{name}}</p>
+    <h1 class="title">James' Pokedex</h1>
+    <div class="firstRow">
+        <div class="mainText capital">
+            <div>{{name}}</div>
+            </br>
+            <div class="{{type1}}">Type 1: {{type1}}</div>
+            {{#if type2}} <div class="{{type2}}">Type 2: {{type2}}</div> {{/if}}
+        </div>
+        <div class="empty"></div>
+        <div class="pokemonInfo">
+            <img class="pokemonImg" src="{{img}}" />
+            <div>National ID: #{{id}}</div>
+            <div>Weight: {{weight}}kg</div>
+            <div>Height: {{height}}m</div>
+        </div>
+    </div>
+    <div class="capital mainText">Evolutions:</div>
+    <div class="evos capital">
+        <div>
+            {{#each evolutions.firstEvo}}
+            <a href='/pokemon/{{id}}'>
+                <div>
+                    <img class="evoImg"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png" />
+                </div>
+                <div>
+                    {{name}}
+                </div>
+            </a>
+            {{/each}}
+        </div>
+        <div class="firstEvoStep">
+            {{#each evolutions.secondEvo}}
+            <div class="step">
+                <div>
+                    {{#if level}} <div>@ level: {{level}}</div> {{/if}}
+                    {{#if item}} <div>w/ {{item}}</div> {{/if}}
+                    {{#if time_of_day}} <div>w/ {{time_of_day}}</div> {{/if}}
+                    {{#if min_happiness}} <div>w/ {{min_happiness}}</div> {{/if}}
 
-        <p>Weighing at {{weight}}kg</p>
 
-        <p>And {{height}}m tall</p>
-
-        <p class="{{type1}} types" id='tp1'>Type 1: {{type1}}</p>
-        {{#if type2}} <p class="{{type2}} types" id='tp2'>Type 2: {{type2}}</p> {{/if}}
-
-        <div class="types">Evolutions: </br>
-            {{#each evolutions}}
-            <div class="col">
-                <p>{{this.name}}</p>
-                <p>{{this.level}}</p>
+                </div>
+                <div>
+                    --------------->
+                </div>
             </div>
-            {{#unless @last}} ---> {{/unless}}
+            {{/each}}
+        </div>
+        <div>
+            {{#each evolutions.secondEvo}}
+            <a href='/pokemon/{{id}}'>
+                <div>
+                    <img class="evoImg"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png" />
+                </div>
+                <div>
+                    {{name}}
+                </div>
+            </a>
+            {{/each}}
+        </div>
+
+        {{#each evolutions.thirdEvo}}
+        <div class="secondEvoStep">
+            <div>
+                {{#if level}} <div>@ level: {{level}}</div> {{/if}}
+                {{#if item}} <div>w/ {{item}}</div> {{/if}}
+                {{#if time_of_day}} <div>w/ {{time_of_day}}</div> {{/if}}
+                {{#if min_happiness}} <div>w/ {{min_happiness}}</div> {{/if}}
+            </div>
+            <div>
+                --------------->
+            </div>
+            {{/each}}
+        </div>
+
+        <div>
+            {{#each evolutions.thirdEvo}}
+            <a href='/pokemon/{{id}}'>
+                <div>
+                    <img class="evoImg"
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png" />
+                </div>
+                <div>
+                    {{name}}
+                </div>
+            </a>
             {{/each}}
         </div>
     </div>
 
-    <div class="pokemonBox">
-        <img class="pokemonImg" src="{{img}}"></img>
-    </div>
+
 </main>
