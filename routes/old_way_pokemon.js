@@ -84,9 +84,24 @@ router.get('/:id', function (req, res, next) {
             name: evoTwo,
             level,
             id,
+            gender,
+            held_item,
             item,
+            known_move,
+            known_move_type,
+            location,
+            min_affection,
+            min_beauty,
             min_happiness,
+            min_level,
+            needs_overworld_rain,
+            party_species,
+            party_type,
+            relative_physical_stats,
             time_of_day,
+            trade_species,
+            trigger,
+            turn_upside_down,
           };
           pokemonObject.evolutions.secondEvo.push(evolutionTree);
         }
@@ -97,7 +112,6 @@ router.get('/:id', function (req, res, next) {
           const evoThree = evolutionTo.species.name;
           const level = evolutionTo.evolution_details[0].min_level;
           const id = getIDFromURL(evolutionTo.species.url);
-
           const evolutionDetails = evolutionTo.evolution_details[0];
           let {
             gender,
@@ -126,9 +140,24 @@ router.get('/:id', function (req, res, next) {
             name: evoThree,
             level,
             id,
+            gender,
+            held_item,
             item,
+            known_move,
+            known_move_type,
+            location,
+            min_affection,
+            min_beauty,
             min_happiness,
+            min_level,
+            needs_overworld_rain,
+            party_species,
+            party_type,
+            relative_physical_stats,
             time_of_day,
+            trade_species,
+            trigger,
+            turn_upside_down,
           };
           pokemonObject.evolutions.thirdEvo.push(evolutionTree);
         }
