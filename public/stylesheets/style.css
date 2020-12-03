@@ -8,25 +8,24 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  width: 900px;
+  margin: 0 auto;
 }
 .firstRow {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
-.empty {
-  flex-grow: 3;
-  width: 500px;
-}
+
 .mainText {
   font-size: 20px;
   font-weight: bold;
-  width: 400px;
+  width: 50%;
 }
 .pokemonInfo {
   font-size: 12px;
   order: 2;
+  width: 50%;
 }
 .pokemonImg {
   width: 90%;
@@ -34,26 +33,40 @@ body {
 .evos {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
-}
-.firstEvoStep,
-.secondEvoStep {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-.step {
   justify-content: center;
+}
+.evoColumns {
   display: flex;
-  height: 115px;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 10px;
+}
+.evoColumnOne {
+  order: 1;
+}
+.evoColumnTwo {
+  order: 2;
+}
+.evoColumnThree {
+  order: 3;
+}
+.evoColumnFour {
+  order: 4;
+}
+.evoColumnFive {
+  order: 5;
+}
+.evoForm {
+  display: flex;
+}
+.evoStep {
+  display: flex;
   align-items: center;
+  height: 115px;
+  justify-content: center;
   flex-direction: column;
 }
-.evoImg {
-}
-
 .capital {
   text-transform: capitalize;
 }
