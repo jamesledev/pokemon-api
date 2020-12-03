@@ -35,23 +35,23 @@
     <div class="evoColumnTwo evoColumns">
       {{#each evolutions.secondEvo}}
       <div class="evoStep">
-        <div>
+        <div class='step'>
           {{#if level}} <div>@ level: {{level}}</div> {{/if}}
           {{#if item}} <div>w/ <img src='/images/{{item}}.png' /></div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}
           {{#if held_item}} <div>holding: {{held-item}}</div> {{/if}}
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
-          {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}} move</div> {{/if}}
+          {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
           {{#if location}} <div>@{{location}}</div> {{/if}}
-          {{#if min_affection}} <div>bffs</div> {{/if}}
+          {{#if min_affection}} <div><img src='/images/affection.png' /></div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
-          {{#if min_happiness}} <div>be happy</div> {{/if}}
+          {{#if min_happiness}} <div><img src='/images/happiness.png' /></div> {{/if}}
           {{#if needs_overworld_rain}} <div>must rain</div> {{/if}}
           {{#if party_species}} <div> {{party_species}}</div> {{/if}}
           {{#if party_type}} <div> {{party_type}}</div> {{/if}}
           {{#if relative_physical_stats}} <div>{{relative_physical_stats}}</div> {{/if}}
-          {{#if time_of_day}} <div>@ {{time_of_day}}</div> {{/if}}
-          {{#if trade_species}} <div>trade</div> {{/if}}
+          {{#if time_of_day}} <div><img src='/images/{{time_of_day}}.png' /></div> {{/if}}
+          {{#if trigger}} <div><img src='/images/trade.png' /></div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
         </div>
         <div>
@@ -78,7 +78,7 @@
     <div class="evoColumnFour evoColumns">
       {{#each evolutions.thirdEvo}}
       <div class='evoStep'>
-        <div>
+        <div class='step'>
           {{#if level}} <div>@ level: {{level}}</div> {{/if}}
           {{#if item}} <div>w/ <img src='/images/{{item}}.png' /></div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}

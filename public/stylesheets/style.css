@@ -67,6 +67,10 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.step {
+  display: flex;
+  flex-direction: row;
+}
 .capital {
   text-transform: capitalize;
 }

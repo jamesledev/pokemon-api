@@ -59,9 +59,9 @@ router.get('/:id', function (req, res, next) {
           const id = getIDFromURL(evolutionTo.species.url);
           const evolutionDetails = evolutionTo.evolution_details[0];
           let trigger = evolutionTo.evolution_details[0].trigger.name;
-          // if (trigger != 'trade') {
-          //   trigger = null;
-          // }
+          if (trigger != 'trade') {
+            trigger = null;
+          }
           let {
             gender,
             held_item,
@@ -103,9 +103,8 @@ router.get('/:id', function (req, res, next) {
             party_type,
             relative_physical_stats,
             time_of_day,
-            // trade_species,
-            trigger,
             turn_upside_down,
+            trigger,
           };
           pokemonObject.evolutions.secondEvo.push(evolutionTree);
         }
@@ -117,7 +116,10 @@ router.get('/:id', function (req, res, next) {
           const level = evolutionTo.evolution_details[0].min_level;
           const id = getIDFromURL(evolutionTo.species.url);
           const evolutionDetails = evolutionTo.evolution_details[0];
-          const trigger = evolutionTo.evolution_details[0].trigger.name;
+          let trigger = evolutionTo.evolution_details[0].trigger.name;
+          if (trigger != 'trade') {
+            trigger = null;
+          }
           let {
             gender,
             held_item,
@@ -142,7 +144,7 @@ router.get('/:id', function (req, res, next) {
             : known_move_type;
           known_move = known_move ? known_move.name : known_move;
           const evolutionTree = {
-            name: evoTwo,
+            name: evoThree,
             level,
             id,
             gender,
@@ -159,9 +161,8 @@ router.get('/:id', function (req, res, next) {
             party_type,
             relative_physical_stats,
             time_of_day,
-            // trade_species,
-            trigger,
             turn_upside_down,
+            trigger,
           };
           pokemonObject.evolutions.thirdEvo.push(evolutionTree);
         }
@@ -174,7 +175,7 @@ router.get('/:id', function (req, res, next) {
     })
     .then(function (data) {
       console.log(pokemonObject);
-      console.log(pokemonObject.evolutions.secondEvo);
+      console.log(pokemonObject.evolutions.thirdEvo);
       res.render('pokemon', pokemonObject);
     });
 });
