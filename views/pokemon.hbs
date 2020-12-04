@@ -40,12 +40,13 @@
           {{#if item}} <div class='tooltip'>w/ <img src='/images/{{item}}.png' />
             <span class='tooltiptext'>{{item}}</span></div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}
-          {{#if held_item}} <div><img
+          {{#if held_item}} <div> <img
               src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{{held_item}}.png' /> </div>
           {{/if}}
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
           {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
-          {{#if location}} <div>@{{location}}</div> {{/if}}
+          {{#if location}} <div class='tooltip'><img src='/images/location.png' />
+            <span class='tooltiptext'>{{location}}</span></div> {{/if}}
           {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
             <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
@@ -95,7 +96,8 @@
           {{/if}}
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
           {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
-          {{#if location}} <div>@{{location}}</div> {{/if}}
+          {{#if location}} <div class='tooltip'><img src='/images/location.png' />
+            <span class='tooltiptext'>{{location}}</span></div>{{/if}}
           {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
             <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
