@@ -85,6 +85,10 @@ router.get('/:id', function (req, res, next) {
             ? known_move_type.name
             : known_move_type;
           known_move = known_move ? known_move.name : known_move;
+          held_item = held_item ? held_item.name : held_item;
+          if (relative_physical_stats === 0) {
+            relative_physical_stats = 'equal';
+          }
           const evolutionTree = {
             name: evoTwo,
             level,
@@ -143,6 +147,7 @@ router.get('/:id', function (req, res, next) {
             ? known_move_type.name
             : known_move_type;
           known_move = known_move ? known_move.name : known_move;
+          held_item = held_item ? held_item.name : held_item;
           const evolutionTree = {
             name: evoThree,
             level,

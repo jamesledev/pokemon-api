@@ -36,26 +36,33 @@
       {{#each evolutions.secondEvo}}
       <div class="evoStep">
         <div class='step'>
-          {{#if level}} <div>@ level: {{level}}</div> {{/if}}
-          {{#if item}} <div>w/ <img src='/images/{{item}}.png' /></div> {{/if}}
+          {{#if level}} <div class="tiny-text">{{level}}</div> {{/if}}
+          {{#if item}} <div class='tooltip'>w/ <img src='/images/{{item}}.png' />
+            <span class='tooltiptext'>{{item}}</span></div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}
-          {{#if held_item}} <div>holding: {{held-item}}</div> {{/if}}
+          {{#if held_item}} <div><img
+              src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{{held_item}}.png' /> </div>
+          {{/if}}
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
           {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
           {{#if location}} <div>@{{location}}</div> {{/if}}
-          {{#if min_affection}} <div><img src='/images/affection.png' /></div> {{/if}}
+          {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
+            <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
-          {{#if min_happiness}} <div><img src='/images/happiness.png' /></div> {{/if}}
+          {{#if min_happiness}} <div class='tooltip'><img src='/images/happiness.png' />
+            <span class='tooltiptext'>Happiness</span></div> {{/if}}
           {{#if needs_overworld_rain}} <div>must rain</div> {{/if}}
           {{#if party_species}} <div> {{party_species}}</div> {{/if}}
           {{#if party_type}} <div> {{party_type}}</div> {{/if}}
-          {{#if relative_physical_stats}} <div>{{relative_physical_stats}}</div> {{/if}}
-          {{#if time_of_day}} <div><img src='/images/{{time_of_day}}.png' /></div> {{/if}}
-          {{#if trigger}} <div><img src='/images/trade.png' /></div> {{/if}}
+          {{#if relative_physical_stats}} <div><img src='/images/{{relative_physical_stats}}.png' /> </div> {{/if}}
+          {{#if time_of_day}} <div class='tooltip'><img src='/images/{{time_of_day}}.png' />
+            <span class='tooltiptext'>{{time_of_day}}</span></div> {{/if}}
+          {{#if trigger}} <div class='tooltip'><img src='/images/trade.png' />
+            <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
         </div>
         <div>
-          -------->
+          <img src='/images/levelup.png' />
         </div>
       </div>
       {{/each}}
@@ -79,26 +86,33 @@
       {{#each evolutions.thirdEvo}}
       <div class='evoStep'>
         <div class='step'>
-          {{#if level}} <div>@ level: {{level}}</div> {{/if}}
-          {{#if item}} <div>w/ <img src='/images/{{item}}.png' /></div> {{/if}}
+          {{#if level}} <div class="tiny-text">{{level}}</div> {{/if}}
+          {{#if item}} <div class='tooltip'>w/ <img src='/images/{{item}}.png' />
+            <span class='tooltiptext'>{{item}}</span></div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}
-          {{#if held_item}} <div>holding: {{held-item}}</div> {{/if}}
+          {{#if held_item}} <div><img
+              src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{{held_item}}.png' /> </div>
+          {{/if}}
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
           {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
           {{#if location}} <div>@{{location}}</div> {{/if}}
-          {{#if min_affection}} <div><img src='/images/affection.png' /></div> {{/if}}
+          {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
+            <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
-          {{#if min_happiness}} <div><img src='/images/happiness.png' /></div> {{/if}}
+          {{#if min_happiness}} <div class='tooltip'><img src='/images/happiness.png' />
+            <span class='tooltiptext'>Happiness</span></div> {{/if}}
           {{#if needs_overworld_rain}} <div>must rain</div> {{/if}}
           {{#if party_species}} <div> {{party_species}}</div> {{/if}}
           {{#if party_type}} <div> {{party_type}}</div> {{/if}}
-          {{#if relative_physical_stats}} <div>{{relative_physical_stats}}</div> {{/if}}
-          {{#if time_of_day}} <div><img src='/images/{{time_of_day}}.png' /></div> {{/if}}
-          {{#if trigger}} <div><img src='/images/trade.png' /></div> {{/if}}
+          {{#if relative_physical_stats}} <div><img src='/images/{{relative_physical_stats}}.png' /> </div> {{/if}}
+          {{#if time_of_day}} <div class='tooltip'><img src='/images/{{time_of_day}}.png' />
+            <span class='tooltiptext'>{{time_of_day}}</span></div> {{/if}}
+          {{#if trigger}} <div class='tooltip'><img src='/images/trade.png' />
+            <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
         </div>
         <div>
-          -------->
+          <img src='/images/levelup.png' />
         </div>
       </div>
       {{/each}}
@@ -118,6 +132,16 @@
       </div>
       {{/each}}
     </div>
+  </div>
+
+  {{!-- <div class='key'>
+    Key:
+    <div>Affection = <img src='/images/affection.png' /></div>
+    <div>Happiness = <img src='/images/happiness.png' /></div>
+    <div>Trade = <img src='/images/trade.png' /></div>
+    <div>During Day time = <img src='/images/day.png' /></div>
+    <div>During night time = <img src='/images/night.png' /></div> --}}
+
   </div>
   {{!-- <div>
         <img src='/images/su-jeong-lovelyz-4.jpg' />
