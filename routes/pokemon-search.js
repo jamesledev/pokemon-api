@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
 router.post('/', function (req, res, next) {
-  console.log('i am in the users');
-  res.send('respond with a resource');
+  const pokemon = req.body.pokemon;
+  res.redirect(`/pokemon/${pokemon}`);
 });
 
 module.exports = router;

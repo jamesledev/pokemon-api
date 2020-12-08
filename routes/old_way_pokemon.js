@@ -2,13 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 const axios = require('axios');
+const { getIDFromURL } = require('../utils/index');
 /* GET home page. */
-
-function getIDFromURL(url) {
-  url = url.split('/');
-  let id = url[url.length - 2];
-  return id;
-}
 
 router.get('/:id', function (req, res, next) {
   const id = req.params.id;
@@ -148,6 +143,9 @@ router.get('/:id', function (req, res, next) {
             : known_move_type;
           known_move = known_move ? known_move.name : known_move;
           held_item = held_item ? held_item.name : held_item;
+          if (relative_physical_stats === 0) {
+            relative_physical_stats = 'equal';
+          }
           const evolutionTree = {
             name: evoThree,
             level,
