@@ -9,6 +9,11 @@
     </div>
 
     <div class="pokemonInfo">
+      <div class="topnav">
+        <form method="POST" action="/pokemon-search">
+          <input name="pokemon" type="search" placeholder="Search..">
+        </form>
+      </div>
       <img class="pokemonImg" src="{{img}}" />
       <div>National ID: #{{id}}</div>
       <div>Weight: {{weight}}kg</div>
@@ -95,7 +100,7 @@
               src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{{held_item}}.png' /> </div>
           {{/if}}
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
-          {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
+          {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}} type move</div> {{/if}}
           {{#if location}} <div class='tooltip'><img src='/images/location.png' />
             <span class='tooltiptext'>{{location}}</span></div>{{/if}}
           {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
@@ -108,7 +113,7 @@
           {{#if party_type}} <div> {{party_type}}</div> {{/if}}
           {{#if relative_physical_stats}} <div><img src='/images/{{relative_physical_stats}}.png' /> </div> {{/if}}
           {{#if time_of_day}} <div class='tooltip'><img src='/images/{{time_of_day}}.png' />
-            <span class='tooltiptext'>{{time_of_day}}</span></div> {{/if}}
+            <span class='tooltiptext'>@{{time_of_day}} time</span></div> {{/if}}
           {{#if trigger}} <div class='tooltip'><img src='/images/trade.png' />
             <span class='tooltiptext'>Affection</span></div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
@@ -145,8 +150,6 @@
     <div>During night time = <img src='/images/night.png' /></div> --}}
 
   </div>
-  {{!-- <div>
-        <img src='/images/su-jeong-lovelyz-4.jpg' />
-    </div> --}}
+
 
 </main>
