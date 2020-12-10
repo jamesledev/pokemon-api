@@ -9,9 +9,9 @@
     </div>
 
     <div class="pokemonInfo">
-      <div class="topnav">
-        <form method="POST" action="/pokemon-search">
-          <input name="pokemon" type="search" placeholder="Search..">
+      <div>
+        <form class='pokemonTest' method="POST" action="/pokemon-search">
+          <input id='pokemonList' class='salmon' name="pokemon" type="search" placeholder="Search..">
         </form>
       </div>
       <img class="pokemonImg" src="{{img}}" />
@@ -151,5 +151,38 @@
 
   </div>
 
-
 </main>
+
+<script>
+
+  const form = document.querySelector('.pokemonTest')
+  form.addEventListener("submit", function (event) {
+    let inputCheck = document.querySelector('.salmon').value
+    inputCheck = inputCheck.toLowerCase();
+    console.log(inputCheck);
+    for (var i = 0; i < itemListData.length; i++) {
+      if (inputCheck === itemListData[i].name) {
+        console.log('poop');
+        return true;
+        break;
+      }
+      console.log('bug poop')
+    }
+    event.preventDefault();
+  })
+  const itemListData = {{{ nameList }}}
+  var options = {
+    data: itemListData,
+    getValue: 'name',
+    list: {
+      match: {
+        enabled: true
+      }
+    },
+    theme: "blue-light",
+  };
+
+  $("#pokemonList").easyAutocomplete(options);
+
+
+</script>

@@ -83,9 +83,12 @@ router.get('/:id', async function (req, res, next) {
     const evolution = await axios.get(
       'https://pokeapi.co/api/v2/pokemon-species/' + id
     );
-    const evoUrl = await evolution.data.evolution_chain.url;
+    const evoUrl = evolution.data.evolution_chain.url;
     const evoInfo = await axios.get(evoUrl);
     const evolutionChain = evoInfo.data.chain;
+    const pokemonNames = await axios.get(
+      'https://pokeapi.co/api/v2/pokemon/?limit=2000'
+    );
 
     // let type2 = null;
     // if (response.data.types[1]) {
@@ -130,6 +133,7 @@ router.get('/:id', async function (req, res, next) {
         secondEvo,
         thirdEvo,
       },
+      nameList: JSON.stringify(pokemonNames.data.results),
     };
 
     res.render('pokemon', pokemonObject);
