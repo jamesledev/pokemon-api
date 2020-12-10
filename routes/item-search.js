@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
+
 router.post('/', function (req, res, next) {
   const item = req.body.item;
-  res.redirect(`/item/${item}`);
+  const itemUrl = item.replace(' ', '-');
+  const itemName = itemUrl.toLowerCase();
+  res.redirect(`/item/${itemName}`);
 });
-router.post('/', function (req, res, next) {
-  const pokemon = req.body.pokemon;
-  res.redirect(`/pokemon/${pokemon}`);
-});
-
 module.exports = router;

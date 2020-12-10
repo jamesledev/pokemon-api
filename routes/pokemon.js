@@ -94,6 +94,7 @@ router.get('/:id', async function (req, res, next) {
     const type2 = response.data.types[1]
       ? response.data.types[1].type.name
       : null;
+
     const firstEvo = [];
     firstEvo.push({
       name: evolutionChain.species.name,
@@ -112,7 +113,6 @@ router.get('/:id', async function (req, res, next) {
       secondEvolutionChain && secondEvolutionChain[0].evolves_to.length
         ? evolutionChain.evolves_to[0].evolves_to
         : null;
-
     const thirdEvo = thirdEvolutionChain
       ? getEvolutionInformation(thirdEvolutionChain)
       : [];
@@ -131,7 +131,6 @@ router.get('/:id', async function (req, res, next) {
         thirdEvo,
       },
     };
-    //catch error
 
     res.render('pokemon', pokemonObject);
   } catch (error) {

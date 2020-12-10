@@ -1,0 +1,47 @@
+<main class="container">
+  <h1 class='title'>Pokemon Items!</h1>
+
+  <div>{{id}}</div>
+  <div class='mainInfo'>
+    <div class='englishInfo'>
+      <div class='capital'>{{name}}
+      </div>
+      <div>{{effect}}</div>
+    </div>
+    <div class='koreanInfo'>
+      <div class='capital'>{{korName}}</div>
+      <div>{{korEffect}}</div>
+    </div>
+  </div>
+  <div>
+    <img src="{{sprite}}" />
+  </div>
+  <div>
+    <button class='eng'>
+      ENG
+    </button>
+    <button class='ko'>
+      KO
+    </button>
+  </div>
+  <div class="topnav">
+    <form method="POST" action="/item-search">
+      <input name="item" type="search" placeholder="Search..">
+    </form>
+  </div>
+</main>
+
+<script>
+  const ko = document.querySelector('.ko');
+  const eng = document.querySelector('.eng');
+  const koreanInfo = document.querySelector('.koreanInfo');
+  const englishInfo = document.querySelector('.englishInfo');
+  ko.addEventListener('click', function () {
+    koreanInfo.style.display = 'block';
+    englishInfo.style.display = 'none';
+  });
+  eng.addEventListener('click', function () {
+    koreanInfo.style.display = 'none';
+    englishInfo.style.display = 'block';
+  });
+</script>
