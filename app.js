@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 //pokemon router
 var pokemonRouter = require('./routes/pokemon');
 var pokemonSearchRouter = require('./routes/pokemon-search');
+var pokemonItem = require('./routes/item');
+var itemSearchRouter = require('./routes/item-search');
 
 var app = express();
 
@@ -26,7 +28,8 @@ app.use('/', indexRouter);
 app.use('/pokemon', pokemonRouter);
 app.use('/pokemon-search', pokemonSearchRouter);
 app.use('/users', usersRouter);
-
+app.use('/item', pokemonItem);
+app.use('/item-search', itemSearchRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

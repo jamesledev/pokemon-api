@@ -194,3 +194,11 @@ body {
     border: 1px solid black;
   }
 }
+
+.koreanInfo {
+  display: none;
+}
+
+.englishInfo {
+  display: block;
+}
