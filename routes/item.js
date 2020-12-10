@@ -14,6 +14,8 @@ router.get('/:id', async function (req, res, next) {
 
     const url = 'https://pokeapi.co/api/v2/item/' + id;
     const response = await axios.get(url);
+    const itemListUrl = 'https://pokeapi.co/api/v2/item/?limit=999';
+    const allItemResponse = await axios.get(itemListUrl);
 
     const itemObject = {
       id: response.data.id,
@@ -22,6 +24,7 @@ router.get('/:id', async function (req, res, next) {
       korName: response.data.names[1].name,
       effect: response.data.effect_entries[0].effect,
       korEffect: response.data.flavor_text_entries[10].text,
+      itemList: JSON.stringify(allItemResponse.data.results),
     };
 
     res.render('item', itemObject);

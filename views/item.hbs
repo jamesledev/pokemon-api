@@ -24,9 +24,9 @@
       KO
     </button>
   </div>
-  <div class="topnav">
-    <form method="POST" action="/item-search">
-      <input name="item" type="search" placeholder="Search..">
+  <div>
+    <form class='test' method="POST" action="/item-search">
+      <input id='itemList' class='tuna' name="item" type="search" placeholder="Search..">
     </form>
   </div>
 </main>
@@ -44,4 +44,34 @@
     koreanInfo.style.display = 'none';
     englishInfo.style.display = 'block';
   });
+
+  const form = document.querySelector('.test')
+  form.addEventListener("submit", function (event) {
+    let inputCheck = document.querySelector('.tuna').value
+    inputCheck = inputCheck.replace(' ', '-');
+    inputCheck = inputCheck.toLowerCase();
+    for (var i = 0; i < itemListData.length; i++) {
+      if (inputCheck === itemListData[i].name) {
+        console.log('poop');
+        return true;
+        break;
+      }
+      console.log('bug poop')
+    }
+    event.preventDefault();
+  })
+  const itemListData = {{{ itemList }}}
+  var options = {
+    data: itemListData,
+    getValue: 'name',
+    list: {
+      match: {
+        enabled: true
+      }
+    },
+    theme: "blue-light",
+  };
+
+  $("#itemList").easyAutocomplete(options);
+
 </script>
