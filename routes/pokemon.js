@@ -120,6 +120,14 @@ router.get('/:id', async function (req, res, next) {
       ? getEvolutionInformation(thirdEvolutionChain)
       : [];
 
+    const allPokemonNames = pokemonNames.data.results;
+    for (var i = 0; i < allPokemonNames.length; i++) {
+      const spriteId = getIDFromURL(allPokemonNames[i].url);
+      const spriteImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${spriteId}.png`;
+      allPokemonNames[i].image = spriteImg;
+      console.log(spriteId);
+    }
+
     const pokemonObject = {
       id: response.data.id,
       name: response.data.name,
@@ -133,7 +141,7 @@ router.get('/:id', async function (req, res, next) {
         secondEvo,
         thirdEvo,
       },
-      nameList: JSON.stringify(pokemonNames.data.results),
+      nameList: JSON.stringify(allPokemonNames),
     };
 
     res.render('pokemon', pokemonObject);
