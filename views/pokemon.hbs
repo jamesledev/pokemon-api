@@ -175,12 +175,21 @@
     data: itemListData,
     getValue: 'name',
     list: {
+      onClickEvent: function () {
+        form.submit()
+      },
       match: {
         enabled: true
       }
     },
     theme: "blue-light",
-  };
+    template: {
+      type: "iconRight",
+      fields: {
+        iconSrc: "image"
+      },
+    },
+  }
 
   $("#pokemonList").easyAutocomplete(options);
 

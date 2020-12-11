@@ -17,6 +17,13 @@ router.get('/:id', async function (req, res, next) {
     const itemListUrl = 'https://pokeapi.co/api/v2/item/?limit=999';
     const allItemResponse = await axios.get(itemListUrl);
 
+    const allItemNames = allItemResponse.data.results;
+    for (var i = 0; i < allItemNames.length; i++) {
+      const spriteName = allItemNames[i].name;
+      const spriteImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/${spriteName}.png`;
+      allItemNames[i].image = spriteImg;
+    }
+
     const itemObject = {
       id: response.data.id,
       name: response.data.name,
@@ -24,7 +31,7 @@ router.get('/:id', async function (req, res, next) {
       korName: response.data.names[1].name,
       effect: response.data.effect_entries[0].effect,
       korEffect: response.data.flavor_text_entries[10].text,
-      itemList: JSON.stringify(allItemResponse.data.results),
+      itemList: JSON.stringify(allItemNames),
     };
 
     res.render('item', itemObject);
