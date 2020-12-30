@@ -33,7 +33,7 @@ router.get('/:id', async function (req, res, next) {
       korEffect: response.data.flavor_text_entries[10].text,
       itemList: JSON.stringify(allItemNames),
     };
-
+    //make a for loop in flavour text to look make sure the korean one exists
     res.render('item', itemObject);
   } catch (error) {
     const message =
