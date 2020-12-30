@@ -7,4 +7,5 @@ router.post('/', function (req, res, next) {
   const itemName = itemUrl.toLowerCase();
   res.redirect(`/item/${itemName}`);
 });
+
 module.exports = router;

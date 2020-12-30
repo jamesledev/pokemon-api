@@ -115,7 +115,7 @@
           {{#if time_of_day}} <div class='tooltip'><img src='/images/{{time_of_day}}.png' />
             <span class='tooltiptext'>@{{time_of_day}} time</span></div> {{/if}}
           {{#if trigger}} <div class='tooltip'><img src='/images/trade.png' />
-            <span class='tooltiptext'>Affection</span></div> {{/if}}
+            <span class='tooltiptext'>Trade</span></div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
         </div>
         <div>
@@ -159,7 +159,7 @@
   form.addEventListener("submit", function (event) {
     let inputCheck = document.querySelector('.salmon').value
     inputCheck = inputCheck.toLowerCase();
-    console.log(inputCheck);
+
     for (var i = 0; i < itemListData.length; i++) {
       if (inputCheck === itemListData[i].name) {
         console.log('poop');
