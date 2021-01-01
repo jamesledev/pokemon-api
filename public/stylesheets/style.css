@@ -1,5 +1,6 @@
 body {
   font: 14px Helvetica, sans-serif;
+  background-color: grey;
 }
 .title {
   display: flex;
@@ -10,6 +11,7 @@ body {
   flex-direction: column;
   width: 900px;
   margin: 0 auto;
+  background-color: white;
 }
 .firstRow {
   display: flex;
@@ -163,6 +165,61 @@ body {
 }
 .fairy {
   color: #d685ad;
+}
+
+.normal-background {
+  background-color: #a8a878;
+}
+.electric-background {
+  background-color: #f7d02c;
+}
+.poison-background {
+  background-color: #a33ea1;
+}
+.psychic-background {
+  background-color: #f95587;
+}
+.grass-background {
+  background-color: #7ac74c;
+}
+.ground-background {
+  background-color: #e2bf65;
+}
+.fire-background {
+  background-color: #ee8130;
+}
+.ice-background {
+  background-color: #96d9d6;
+}
+.rock-background {
+  background-color: #b6a136;
+}
+.dragon-background {
+  background-color: #6f35fc;
+}
+.water-background {
+  background-color: #6390f0;
+}
+.bug-background {
+  background-color: #a6b91a;
+}
+.dark-background {
+  background-color: #705746;
+}
+.fighting-background {
+  background-color: #c22e28;
+}
+.ghost-background {
+  background-color: #735797;
+}
+.steel-background {
+  background-color: #b7b7ce;
+}
+.flying-background {
+  background-color: #a98ff3;
+}
+.fairy-background {
+  background-color: #d685ad;
 }
 /* Add a black background color to the top navigation bar */
 .topnav {

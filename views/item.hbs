@@ -1,5 +1,7 @@
 <main class="container">
-  <h1 class='title'>Pokemon Items!</h1>
+  <h1 class='title'><img
+      src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png' />Pokemon Items!<img
+      src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png' /></h1>
 
   <div>{{id}}</div>
   <div class='mainInfo'>
@@ -29,6 +31,10 @@
       <input id='itemList' class='tuna' name="item" type="search" placeholder="Search..">
     </form>
   </div>
+  <br />
+  <form method="POST" action="/pokemon-page">
+    <button style='width: 80px; height: 60px;'>Pokemon page</button>
+  </form>
 </main>
 
 <script>
@@ -44,7 +50,6 @@
     koreanInfo.style.display = 'none';
     englishInfo.style.display = 'block';
   });
-
   const form = document.querySelector('.test')
   form.addEventListener("submit", function (event) {
     let inputCheck = document.querySelector('.tuna').value
@@ -80,7 +85,5 @@
       },
     },
   };
-
   $("#itemList").easyAutocomplete(options);
-
 </script>
