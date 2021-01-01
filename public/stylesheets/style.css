@@ -259,3 +259,92 @@ body {
 .englishInfo {
   display: block;
 }
+
+.pokemonInput {
+  float: right;
+  margin: 0px 100px;
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  .pokemonInput {
+    float: right;
+    margin: 0px 50px;
+  }
+  .firstRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .mainText {
+    font-size: 20px;
+    font-weight: bold;
+    width: 50%;
+  }
+  .pokemonInfo {
+    font-size: 12px;
+    order: 2;
+    width: 50%;
+  }
+  .pokemonImg {
+    width: 90%;
+  }
+  .evos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .evoColumns {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 10px;
+  }
+  .evoColumnOne {
+    order: 1;
+  }
+  .evoColumnTwo {
+    order: 2;
+  }
+  .evoColumnThree {
+    order: 3;
+  }
+  .evoColumnFour {
+    order: 4;
+  }
+  .evoColumnFive {
+    order: 5;
+  }
+  .evoForm {
+    display: flex;
+  }
+  .evoStep {
+    display: flex;
+    align-items: center;
+    height: 115px;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .step {
+    display: flex;
+    flex-direction: row;
+  }
+  .capital {
+    text-transform: capitalize;
+  }
+  .tiny-text {
+    font-size: 11px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
