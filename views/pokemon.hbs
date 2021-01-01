@@ -1,16 +1,17 @@
 <main class="container">
-  <h1 class="title">James' Pokedex</h1>
+  <h1 class="title"><img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png' />James'
+    Pokedex <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png' /></h1>
   <div class="firstRow">
     <div class="mainText capital">
       <div>{{name}}</div>
       </br>
-      <div class="{{type1}}">Type 1: {{type1}}</div>
+      <p class="{{type1}}">Type 1: {{type1}}</p>
       {{#if type2}} <div class="{{type2}}">Type 2: {{type2}}</div> {{/if}}
     </div>
 
     <div class="pokemonInfo">
       <div>
-        <form class='pokemonTest' method="POST" action="/pokemon-search">
+        <form class='pokemonTest' method="POST" action="/pokemon-search" style='float: right; margin: 0px 100px;'>
           <input id='pokemonList' class='salmon' name="pokemon" type="search" placeholder="Search..">
         </form>
       </div>
@@ -43,7 +44,8 @@
         <div class='step'>
           {{#if level}} <div class="tiny-text">{{level}}</div> {{/if}}
           {{#if item}} <div class='tooltip'>w/ <img src='/images/{{item}}.png' />
-            <span class='tooltiptext'>{{item}}</span></div> {{/if}}
+            <span class='tooltiptext'>{{item}}</span>
+          </div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}
           {{#if held_item}} <div> <img
               src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{{held_item}}.png' /> </div>
@@ -51,20 +53,25 @@
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
           {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}}move</div> {{/if}}
           {{#if location}} <div class='tooltip'><img src='/images/location.png' />
-            <span class='tooltiptext'>{{location}}</span></div> {{/if}}
+            <span class='tooltiptext'>{{location}}</span>
+          </div> {{/if}}
           {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
-            <span class='tooltiptext'>Affection</span></div> {{/if}}
+            <span class='tooltiptext'>Affection</span>
+          </div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
           {{#if min_happiness}} <div class='tooltip'><img src='/images/happiness.png' />
-            <span class='tooltiptext'>Happiness</span></div> {{/if}}
+            <span class='tooltiptext'>Happiness</span>
+          </div> {{/if}}
           {{#if needs_overworld_rain}} <div>must rain</div> {{/if}}
           {{#if party_species}} <div> {{party_species}}</div> {{/if}}
           {{#if party_type}} <div> {{party_type}}</div> {{/if}}
           {{#if relative_physical_stats}} <div><img src='/images/{{relative_physical_stats}}.png' /> </div> {{/if}}
           {{#if time_of_day}} <div class='tooltip'><img src='/images/{{time_of_day}}.png' />
-            <span class='tooltiptext'>{{time_of_day}}</span></div> {{/if}}
+            <span class='tooltiptext'>{{time_of_day}}</span>
+          </div> {{/if}}
           {{#if trigger}} <div class='tooltip'><img src='/images/trade.png' />
-            <span class='tooltiptext'>Affection</span></div> {{/if}}
+            <span class='tooltiptext'>Affection</span>
+          </div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
         </div>
         <div>
@@ -94,7 +101,8 @@
         <div class='step'>
           {{#if level}} <div class="tiny-text">{{level}}</div> {{/if}}
           {{#if item}} <div class='tooltip'>w/ <img src='/images/{{item}}.png' />
-            <span class='tooltiptext'>{{item}}</span></div> {{/if}}
+            <span class='tooltiptext'>{{item}}</span>
+          </div> {{/if}}
           {{#if gender}} <div>{{gender}}</div> {{/if}}
           {{#if held_item}} <div><img
               src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/{{held_item}}.png' /> </div>
@@ -102,20 +110,25 @@
           {{#if known_move}} <div>knows {{known_move}}</div> {{/if}}
           {{#if known_move_type}} <div class="{{known_move_type}}">knows a {{known_move_type}} type move</div> {{/if}}
           {{#if location}} <div class='tooltip'><img src='/images/location.png' />
-            <span class='tooltiptext'>{{location}}</span></div>{{/if}}
+            <span class='tooltiptext'>{{location}}</span>
+          </div>{{/if}}
           {{#if min_affection}} <div class='tooltip'><img src='/images/affection.png' />
-            <span class='tooltiptext'>Affection</span></div> {{/if}}
+            <span class='tooltiptext'>Affection</span>
+          </div> {{/if}}
           {{#if min_beauty}} <div>be pwetty</div> {{/if}}
           {{#if min_happiness}} <div class='tooltip'><img src='/images/happiness.png' />
-            <span class='tooltiptext'>Happiness</span></div> {{/if}}
+            <span class='tooltiptext'>Happiness</span>
+          </div> {{/if}}
           {{#if needs_overworld_rain}} <div>must rain</div> {{/if}}
           {{#if party_species}} <div> {{party_species}}</div> {{/if}}
           {{#if party_type}} <div> {{party_type}}</div> {{/if}}
           {{#if relative_physical_stats}} <div><img src='/images/{{relative_physical_stats}}.png' /> </div> {{/if}}
           {{#if time_of_day}} <div class='tooltip'><img src='/images/{{time_of_day}}.png' />
-            <span class='tooltiptext'>@{{time_of_day}} time</span></div> {{/if}}
+            <span class='tooltiptext'>@{{time_of_day}} time</span>
+          </div> {{/if}}
           {{#if trigger}} <div class='tooltip'><img src='/images/trade.png' />
-            <span class='tooltiptext'>Trade</span></div> {{/if}}
+            <span class='tooltiptext'>Trade</span>
+          </div> {{/if}}
           {{#if turn_upsisde_down}} <div>flippy</div> {{/if}}
         </div>
         <div>
@@ -150,12 +163,14 @@
     <div>During night time = <img src='/images/night.png' /></div> --}}
 
   </div>
-
+  <br />
+  <form method="POST" action="/item-page">
+    <button style='width: 60px; height: 60px;'>Item page</button>
+  </form>
 </main>
 
 <script>
-
-  const form = document.querySelector('.pokemonTest')
+  const form = document.querySelector('.pokemonTest');
   form.addEventListener("submit", function (event) {
     let inputCheck = document.querySelector('.salmon').value
     inputCheck = inputCheck.toLowerCase();
