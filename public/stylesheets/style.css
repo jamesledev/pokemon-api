@@ -1,16 +1,23 @@
 body {
   font: 14px Helvetica, sans-serif;
-  background-color: grey;
+  background-color: rgb(255, 255, 255);
 }
 .title {
   display: flex;
-  justify-content: center;
+  height: 100px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.titleText {
+  text-align: center;
 }
 .container {
   display: flex;
   flex-direction: column;
   width: 900px;
   margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 8px;
   background-color: white;
 }
 .firstRow {
@@ -23,11 +30,15 @@ body {
   font-size: 20px;
   font-weight: bold;
   width: 50%;
+  margin: 30px;
 }
 .pokemonInfo {
   font-size: 12px;
   order: 2;
   width: 50%;
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
 }
 .pokemonImg {
   width: 90%;
@@ -245,8 +256,32 @@ body {
 }
 
 .pokemonInput {
-  float: right;
-  margin: 0px 100px;
+  align-self: center;
+}
+
+.buttonPadding {
+  padding: 20px;
+}
+.margin {
+  padding: 20px;
+}
+
+.outerBox {
+  display: flex;
+  width: 600px;
+  height: 500px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.innerBox {
+  align-content: center;
+  justify-content: center;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 20px;
+  width: 500px;
+  height: 400px;
 }
 
 @media screen and (max-width: 800px) {
@@ -255,11 +290,9 @@ body {
     flex-direction: column;
     width: 375px;
     margin: 0 auto;
-    background-color: white;
   }
-  .pokemonInput {
-    float: right;
-    margin: 0px 50px;
+  #pokemonList {
+    padding: 3px 6px;
   }
   .firstRow {
     display: flex;
@@ -278,7 +311,7 @@ body {
     width: 50%;
   }
   .pokemonImg {
-    width: 90%;
+    width: 183px;
   }
   .evos {
     display: flex;
