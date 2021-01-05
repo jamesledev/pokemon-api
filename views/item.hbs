@@ -2,39 +2,40 @@
   <h1 class='title'><img
       src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png' />Pokemon Items!<img
       src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/master-ball.png' /></h1>
-
-  <div>{{id}}</div>
-  <div class='mainInfo'>
-    <div class='englishInfo'>
-      <div class='capital'>{{name}}
+  <div class="margin">
+    <div>{{id}}</div>
+    <div class='mainInfo'>
+      <div class='englishInfo'>
+        <div class='capital'>{{name}}
+        </div>
+        <div>{{effect}}</div>
       </div>
-      <div>{{effect}}</div>
+      <div class='koreanInfo'>
+        <div class='capital'>{{korName}}</div>
+        <div>{{korEffect}}</div>
+      </div>
     </div>
-    <div class='koreanInfo'>
-      <div class='capital'>{{korName}}</div>
-      <div>{{korEffect}}</div>
+    <div>
+      <img src="{{sprite}}" />
     </div>
-  </div>
-  <div>
-    <img src="{{sprite}}" />
-  </div>
-  <div>
-    <button class='eng'>
-      ENG
-    </button>
-    <button class='ko'>
-      KO
-    </button>
-  </div>
-  <div>
-    <form class='test' method="POST" action="/item-search">
-      <input id='itemList' class='tuna' name="item" type="search" placeholder="Search..">
+    <div>
+      <button class='eng'>
+        ENG
+      </button>
+      <button class='ko'>
+        KO
+      </button>
+    </div>
+    <div>
+      <form class='test' method="POST" action="/item-search">
+        <input id='itemList' class='tuna' name="item" type="search" placeholder="Search..">
+      </form>
+    </div>
+    <br />
+    <form method="POST" action="/pokemon-page">
+      <button style='width: 80px; height: 60px;'>Pokemon page</button>
     </form>
   </div>
-  <br />
-  <form method="POST" action="/pokemon-page">
-    <button style='width: 80px; height: 60px;'>Pokemon page</button>
-  </form>
 </main>
 
 <script>
