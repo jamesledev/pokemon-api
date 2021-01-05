@@ -273,6 +273,7 @@ body {
   align-items: center;
   align-content: center;
   justify-content: center;
+  margin: 0 auto;
 }
 .innerBox {
   align-content: center;
